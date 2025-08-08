@@ -442,7 +442,7 @@ def dashboard_overview(model, df):
 
     # Run AI predictions if not already present
     if "AI_Prediction" not in df.columns:
-        input_features = df[["type", "amount", "oldbalanceOrg", "newbalanceOrig",
+        input_features = df[["step","type", "amount", "oldbalanceOrg", "newbalanceOrig",
                              "oldbalanceDest", "newbalanceDest"]].copy()
         df["AI_Prediction"] = model.predict(input_features)
 
